@@ -1,5 +1,5 @@
 /*
-    FreeRTOS V202012.00
+    FreeRTOS V202012.02
 
     This file is part of the FreeRTOS distribution.
 
