@@ -476,7 +476,7 @@ def configure_argparser():
 
     parser.add_argument('--use-git-ssh',
                         default=False,
-                        action='store_false',
+                        action='store_true',
                         help='Use SSH endpoints to interface git remotes, instead of HTTPS')
 
     parser.add_argument('--unit-test',
