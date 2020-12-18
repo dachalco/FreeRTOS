@@ -289,13 +289,12 @@ def main():
     parser = HeaderChecker.configArgParser()
     args   = parser.parse_args()
 
-    # Configure the checks
+    # Configure the checks then run
     checker = HeaderChecker(FREERTOS_HEADER)
     checker.ignoreExtension(*FREERTOS_IGNORED_EXTENSIONS)
     checker.ignorePattern(*FREERTOS_IGNORED_PATTERNS)
     checker.ignoreFile(os.path.split(__file__)[-1])
 
-    # Run the check on processed args
     return checker.processArgs(args)
 
 
