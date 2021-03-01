@@ -117,24 +117,20 @@ BaseType_t xReturn = pdFAIL;
 
 	if( pxNewListItem != NULL )
 	{
-		taskENTER_CRITICAL();
-		{
-			/* Reference the command being registered from the newly created
-			list item. */
-			pxNewListItem->pxCommandLineDefinition = pxCommandToRegister;
+		/* Reference the command being registered from the newly created
+		list item. */
+		pxNewListItem->pxCommandLineDefinition = pxCommandToRegister;
 
-			/* The new list item will get added to the end of the list, so
-			pxNext has nowhere to point. */
-			pxNewListItem->pxNext = NULL;
+		/* The new list item will get added to the end of the list, so
+		pxNext has nowhere to point. */
+		pxNewListItem->pxNext = NULL;
 
-			/* Add the newly created list item to the end of the already existing
-			list. */
-			pxLastCommandInList->pxNext = pxNewListItem;
+		/* Add the newly created list item to the end of the already existing
+		list. */
+		pxLastCommandInList->pxNext = pxNewListItem;
 
-			/* Set the end of list marker to the new list item. */
-			pxLastCommandInList = pxNewListItem;
-		}
-		taskEXIT_CRITICAL();
+		/* Set the end of list marker to the new list item. */
+		pxLastCommandInList = pxNewListItem;
 
 		xReturn = pdPASS;
 	}
